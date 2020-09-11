@@ -10,7 +10,7 @@ const Scene = () => {
   return useObserver(() =>(
     <>
     {projectStore.projects.map(project => (
-      <Texture key={project.id} position={[0,0,0]} num={num++} project={project} ></Texture>
+      <Texture key={project.id} position={project.title == 'Fixing your shoe!' ? [0,0,-1] : project.title == 'Plastic Catch' ? [10,0,-1] : project.title == 'Tropico' ? [20,0,-1] : project.title == 'HoneyHome' ? [30,0,-1] : project.title == 'Humo webshop and Longread' ? [40,0,-1] : project.title == 'GamingGram' ?  [50,0,-1] : [60,0,-1]} num={num++} project={project} ></Texture>
     ))}
     </>
   ))
