@@ -13,7 +13,7 @@ function App() {
         gl={{antialias:true}}
         shadowMap
         >
-        <CameraControls />
+        <CameraControls  />
         <ambientLight intensity={0.3} />
         <directionalLight
           castShadow

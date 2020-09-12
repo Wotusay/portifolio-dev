@@ -1,5 +1,5 @@
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import * as THREE from 'three/src/Three'
 
 import { useObserver } from 'mobx-react-lite'
@@ -12,11 +12,23 @@ const CameraControls = () => {
         camera,
         gl: {domElement} 
     } = useThree()
-
+    const minPan = new THREE.Vector3( - 2, - 0.5, - 1 )
+    const maxPan = new THREE.Vector3(  68,  0.5, 0)
+    const v = new THREE.Vector3()
     const controls = useRef();
-    useFrame(state => controls.current.update())
-
-    return(
+    useEffect(() => {
+        if(controls.current) {
+            let cntrl = controls.current
+            cntrl.addEventListener('change' , () => {
+                v.copy(cntrl.target);
+                cntrl.target.clamp(minPan, maxPan);
+                v.sub(cntrl.target);
+                camera.position.sub(v)
+            });
+        }
+    }, [controls.current])
+    useFrame(() => controls.current.update())
+    return useObserver(() =>
         <orbitControls
             ref={controls}
             args={[camera,domElement]}
