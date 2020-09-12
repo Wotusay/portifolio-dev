@@ -13,7 +13,7 @@ const CameraControls = () => {
         gl: {domElement} 
     } = useThree()
     const minPan = new THREE.Vector3( - 2, - 0.5, - 1 )
-    const maxPan = new THREE.Vector3(  68,  0.5, 0)
+    const maxPan = new THREE.Vector3(  60,  0.5, 0)
     const v = new THREE.Vector3()
     const controls = useRef();
     useEffect(() => {
@@ -27,6 +27,7 @@ const CameraControls = () => {
             });
         }
     }, [controls.current])
+
     useFrame(() => controls.current.update())
     return useObserver(() =>
         <orbitControls
