@@ -2,7 +2,6 @@ import { configure } from "mobx";
 import ProjectStore from "./ProjectStore";
 import UiStore from "./UiStore";
 
-
 configure({ enforceActions: "observed" });
 class RootStore { 
     constructor() {
@@ -12,7 +11,6 @@ class RootStore {
     
     loadAllData = async () => {
         await this.projectStore.loadAllProjects();
-
     }
 
 }

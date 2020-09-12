@@ -29,3 +29,7 @@ body,
   overflow: hidden;
   background: #010424;
 }
+
+canvas {
+  outline: none;
+}
