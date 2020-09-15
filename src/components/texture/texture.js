@@ -1,16 +1,24 @@
 import { animated, useSpring } from 'react-spring-three'
 import * as THREE from 'three/src/Three'
-import React, { useState, useRef, useMemo } from 'react'
+import React, { useRef, useMemo, useContext, useState } from 'react'
 import { useObserver } from 'mobx-react-lite'
+import {Html} from 'drei';
+import styles from "./texture.module.css"
+import { useFrame, useThree, useUpdate } from 'react-three-fiber';
 
-const Texture = ({project, position,num}) => {
+const Texture = ({project, position,name, point}) => {
     const mesh = useRef();
+    
     const img = project.image;
-    console.log(`this is the current position of ${project.title} = [${position[0] + num}, ${position[1] + num}, ${position[2] + num}] , and the picture is ${img}`)
+    const [hovered, setHover] = useState(false);
+    const [active, setActive] = useState(false);
+    const calc = (x, y) => [-(y - window.innerHeight / 2) / 20, (x - window.innerWidth / 2) / 20, 1.1];
+    const trans = (x, y, s) => `perspective(600px) rotateX(${x}deg) rotateY(${y}deg) scale(${s})`
+    const [props, set] = useSpring(() => ({ xys: [0, 0, 1], config: { mass: 5, tension: 350, friction: 40 } }))
+    console.log(point, name)
     const texture = useMemo(() => new THREE.TextureLoader().load(img), [img])
-
     return useObserver(() => (
-      <group>
+      <>
         <animated.mesh
         ref={mesh}
         position= {position}
@@ -21,15 +29,16 @@ const Texture = ({project, position,num}) => {
         <meshBasicMaterial attach="material" transparent >
         <primitive attach="map" object={texture} castShadow />
         </meshBasicMaterial>
+        <Html 
+        center
+        scaleFactor={30} 
+        className={styles.container}
+        >
+          <h1 className={styles.title}>{project.title}</h1>
+          
+        </Html>
       </animated.mesh>
-
-      <mesh
-         position={[0, 0, -3]}
-         receiveShadow>
-         <boxBufferGeometry attach='geometry' args={[100,100]} />
-         <shadowMaterial attach='material' opacity={0.4} color="#4CAEEC" />
-       </mesh>
-      </group>
+      </>
     ))
 }
 

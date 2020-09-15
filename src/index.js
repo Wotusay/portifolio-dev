@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from "react-router-dom"
-
-
+import './fonts/MonumentExtended-Ultrabold.ttf';
+import './fonts/MonumentExtended-Regular.ttf';
 
 ReactDOM.render(
   <BrowserRouter>

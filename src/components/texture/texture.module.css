@@ -1,0 +1,14 @@
+.title {
+    font-size: 1.1rem;
+    color: white;
+    padding-top: 15rem;
+
+    font-weight: 700;
+}
+
+.container {
+    color: white;
+    font-family: 'muli';
+    width: max-content; 
+    position: relative;
+}

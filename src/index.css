@@ -1,4 +1,18 @@
 @import './reset.css';
+@import url("https://use.typekit.net/rnu8gqa.css");
+
+@font-face {
+  font-family: 'Monument Extended';
+  src: local('Monument Extended'), url(./fonts/MonumentExtended-Ultrabold.ttf) format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Monument Extended';
+  src: local('Monument Extended'), url(./fonts/MonumentExtended-Regular.ttf) format('truetype');
+  font-weight: normal;
+}
+
 
 html {
   box-sizing: border-box;
@@ -19,6 +33,7 @@ body,
   width: 100%;
   height: 100%;
   margin: 0;
+  font-family: 'Monument Extended' ;
   padding: 0;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
