@@ -5,9 +5,126 @@
 
 .nav {
     position: absolute;
-    color: white;
+    color: #0583F2;
     text-transform: uppercase;
     bottom:  5rem;
-    left: 44%;
+    left: 50%;
     font-size: 1.8rem;
 }
+
+.nav_wrapper {
+    position: absolute;
+    right: 0;
+    margin: 6rem;
+    z-index: 1000;
+}
+.navi {
+     color: white;
+     font-size: 2rem;
+     display: flex;
+    justify-content: space-evenly;
+    cursor: pointer;
+
+}
+
+.nav_item {
+    cursor: pointer;
+    padding: 1rem;
+    text-transform: uppercase;
+    color: white;
+    border-bottom: solid 1px transparent ;
+    transition: all ease-in-out 400ms;
+    opacity: 0.7;
+}
+
+.nav_item:hover{
+    opacity: 1;
+    border-bottom: solid 1px white ;
+
+}
+@media only screen and (min-width: 320px) {
+    .nav {
+        text-transform: uppercase;
+        bottom:  5rem;
+        left: 17%;
+        
+        font-size: 1.6rem;
+    }
+
+    .nav_item {
+        padding: 0.3rem;
+        font-size: 1.6rem;
+    }
+
+}
+
+
+@media only screen and (min-width: 400px) {
+    .nav {
+   
+        text-transform: uppercase;
+        bottom:  5rem;
+        left: 20%;
+        
+        font-size: 1.8rem;
+    }
+
+    .nav_item {
+        font-size: 1.6rem;
+        padding: 0.5rem;
+
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .nav {
+   
+        text-transform: uppercase;
+        bottom:  5rem;
+        left: 30%;
+        
+        font-size: 1.8rem;
+    }
+    .nav_item {
+
+        padding: 1rem;
+
+        font-size: 2rem;
+        opacity: 0.7;
+    }
+}
+
+
+@media only screen and (min-width: 800px) {
+    .nav {
+   
+        text-transform: uppercase;
+        bottom:  5rem;
+        left: 40%;
+        
+        font-size: 1.8rem;
+    }
+
+    .nav_item {
+        cursor: pointer;
+        padding: 1rem;
+        text-transform: uppercase;
+        color: white;
+        border-bottom: solid 1px transparent ;
+        transition: all ease-in-out 400ms;
+        opacity: 0.7;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .nav {
+   
+        text-transform: uppercase;
+        bottom:  5rem;
+        left: 43%;
+        
+        font-size: 1.8rem;
+    }
+}
+
+
