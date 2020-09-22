@@ -1,4 +1,4 @@
-# The VALORANT match history bot for Discord
+# My personal Portfolio!
 
 > [Visit the portfolio →](https://woutsalembier.be/)
 ## Table of content
