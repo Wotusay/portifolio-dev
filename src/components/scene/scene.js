@@ -22,9 +22,7 @@ const Scene = () => {
 
   return useObserver(() =>(
     <>
-    {projectStore.projects.length === 0 ? <p style={{color: "white", position: "absolute", fontSize: "3rem", top: "50%", left: "50%"}}>loading ...</p>:
-    projectStore.projects.map(project => (
-      
+    {projectStore.projects.map(project => (
       <>
        <group onPointerMove={(e) => test(e)}>
       <Texture 

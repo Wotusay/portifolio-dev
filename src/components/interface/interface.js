@@ -15,7 +15,9 @@ const Interface = () => {
 
       <div className={styles.nav_wrapper}>
          <div className={styles.navi}>
-            <a href='mailto:wout.salembier@hotmail.com' style={{ textDecoration: "none" }}
+               <a href='https://woutsalembier.myportfolio.com/work' style={{ textDecoration: "none" }}
+            className={styles.nav_item} >Designs</a>
+                 <a href='mailto:wout.salembier@hotmail.com' style={{ textDecoration: "none" }}
             className={styles.nav_item} >Hire me!</a>
          </div>
       </div>
